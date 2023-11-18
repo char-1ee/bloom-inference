@@ -1,0 +1,326 @@
+Warning: Permanently added 'gadi-gpu-v100-0137.gadi.nci.org.au' (ECDSA) to the list of known hosts.
+[2023-11-08 02:18:47,795] [INFO] [runner.py:417:main] Using IP address of 10.6.30.1 for node gadi-gpu-v100-0137.gadi.nci.org.au
+[2023-11-08 02:18:47,799] [INFO] [multinode_runner.py:65:get_cmd] Running on the following workers: gadi-gpu-v100-0137.gadi.nci.org.au,gadi-gpu-v100-0140.gadi.nci.org.au
+[2023-11-08 02:18:47,799] [INFO] [runner.py:508:main] cmd = pdsh -S -f 1024 -w gadi-gpu-v100-0137.gadi.nci.org.au,gadi-gpu-v100-0140.gadi.nci.org.au export PYTHONPATH=/home/552/dz9214:/scratch/zs99/dz9214/hpcai-2023-scripts/pyenv/reproduce/lib/python3.8/site-packages; export CUDA_HOME=/apps/cuda/11.6.1; export TORCH_DISTRIBUTED_DETAIL=DEBUG; export TRANSFORMERS_OFFLINE=1; export LD_LIBRARY_PATH=/apps/cuda/11.6.1/extras/CUPTI/lib64:/apps/cuda/11.6.1/lib64; export PDSH_SSH_ARGS='-o StrictHostKeyChecking=no';  cd /home/552/dz9214; /scratch/zs99/dz9214/hpcai-2023-scripts/pyenv/reproduce/bin/python -u -m deepspeed.launcher.launch --world_info=eyJnYWRpLWdwdS12MTAwLTAxMzcuZ2FkaS5uY2kub3JnLmF1IjogWzAsIDEsIDIsIDNdLCAiZ2FkaS1ncHUtdjEwMC0wMTQwLmdhZGkubmNpLm9yZy5hdSI6IFswLCAxLCAyLCAzXX0= --node_rank=%n --master_addr=10.6.30.1 --master_port=29500 /scratch/zs99/dz9214/hpcai-2023-scripts/00-submission/baseline/baseline_inference.py --name 'microsoft/bloom-deepspeed-inference-int8' --batch_size '13' --dtype 'int8' --benchmark
+gadi-gpu-v100-0137: Warning: Permanently added 'gadi-gpu-v100-0137.gadi.nci.org.au' (ECDSA) to the list of known hosts.
+gadi-gpu-v100-0140: Warning: Permanently added 'gadi-gpu-v100-0140.gadi.nci.org.au' (ECDSA) to the list of known hosts.
+gadi-gpu-v100-0137: [2023-11-08 02:18:50,280] [INFO] [launch.py:142:main] WORLD INFO DICT: {'gadi-gpu-v100-0137.gadi.nci.org.au': [0, 1, 2, 3], 'gadi-gpu-v100-0140.gadi.nci.org.au': [0, 1, 2, 3]}
+gadi-gpu-v100-0137: [2023-11-08 02:18:50,280] [INFO] [launch.py:148:main] nnodes=2, num_local_procs=4, node_rank=0
+gadi-gpu-v100-0137: [2023-11-08 02:18:50,280] [INFO] [launch.py:161:main] global_rank_mapping=defaultdict(<class 'list'>, {'gadi-gpu-v100-0137.gadi.nci.org.au': [0, 1, 2, 3], 'gadi-gpu-v100-0140.gadi.nci.org.au': [4, 5, 6, 7]})
+gadi-gpu-v100-0137: [2023-11-08 02:18:50,280] [INFO] [launch.py:162:main] dist_world_size=8
+gadi-gpu-v100-0137: [2023-11-08 02:18:50,280] [INFO] [launch.py:164:main] Setting CUDA_VISIBLE_DEVICES=0,1,2,3
+gadi-gpu-v100-0140: [2023-11-08 02:18:50,427] [INFO] [launch.py:142:main] WORLD INFO DICT: {'gadi-gpu-v100-0137.gadi.nci.org.au': [0, 1, 2, 3], 'gadi-gpu-v100-0140.gadi.nci.org.au': [0, 1, 2, 3]}
+gadi-gpu-v100-0140: [2023-11-08 02:18:50,427] [INFO] [launch.py:148:main] nnodes=2, num_local_procs=4, node_rank=1
+gadi-gpu-v100-0140: [2023-11-08 02:18:50,427] [INFO] [launch.py:161:main] global_rank_mapping=defaultdict(<class 'list'>, {'gadi-gpu-v100-0137.gadi.nci.org.au': [0, 1, 2, 3], 'gadi-gpu-v100-0140.gadi.nci.org.au': [4, 5, 6, 7]})
+gadi-gpu-v100-0140: [2023-11-08 02:18:50,427] [INFO] [launch.py:162:main] dist_world_size=8
+gadi-gpu-v100-0140: [2023-11-08 02:18:50,427] [INFO] [launch.py:164:main] Setting CUDA_VISIBLE_DEVICES=0,1,2,3
+gadi-gpu-v100-0137: [2023-11-08 02:18:52,451] [INFO] [comm.py:633:init_distributed] Initializing TorchBackend in DeepSpeed with backend nccl
+gadi-gpu-v100-0137: *** Loading the model microsoft/bloom-deepspeed-inference-int8
+gadi-gpu-v100-0137: [2023-11-08 02:18:54,176] [INFO] [utils.py:827:see_memory_usage] pre-from-pretrained
+gadi-gpu-v100-0137: [2023-11-08 02:18:54,176] [INFO] [utils.py:828:see_memory_usage] MA 0.0 GB         Max_MA 0.0 GB         CA 0.0 GB         Max_CA 0 GB 
+gadi-gpu-v100-0137: [2023-11-08 02:18:54,176] [INFO] [utils.py:836:see_memory_usage] CPU Virtual Memory:  used = 26.79 GB, percent = 7.1%
+gadi-gpu-v100-0140: [2023-11-08 02:18:54,215] [WARNING] [config_utils.py:67:_process_deprecated_field] Config parameter mp_size is deprecated use tensor_parallel.tp_size instead
+gadi-gpu-v100-0140: [2023-11-08 02:18:54,219] [WARNING] [config_utils.py:67:_process_deprecated_field] Config parameter mp_size is deprecated use tensor_parallel.tp_size instead
+gadi-gpu-v100-0140: [2023-11-08 02:18:54,222] [WARNING] [config_utils.py:67:_process_deprecated_field] Config parameter mp_size is deprecated use tensor_parallel.tp_size instead
+gadi-gpu-v100-0140: [2023-11-08 02:18:54,236] [WARNING] [config_utils.py:67:_process_deprecated_field] Config parameter mp_size is deprecated use tensor_parallel.tp_size instead
+gadi-gpu-v100-0137: [2023-11-08 02:18:54,243] [WARNING] [config_utils.py:67:_process_deprecated_field] Config parameter mp_size is deprecated use tensor_parallel.tp_size instead
+gadi-gpu-v100-0137: [2023-11-08 02:18:54,262] [WARNING] [config_utils.py:67:_process_deprecated_field] Config parameter mp_size is deprecated use tensor_parallel.tp_size instead
+gadi-gpu-v100-0137: [2023-11-08 02:18:54,281] [WARNING] [config_utils.py:67:_process_deprecated_field] Config parameter mp_size is deprecated use tensor_parallel.tp_size instead
+gadi-gpu-v100-0137: [2023-11-08 02:18:54,296] [INFO] [utils.py:827:see_memory_usage] post-from-pretrained
+gadi-gpu-v100-0137: [2023-11-08 02:18:54,296] [INFO] [utils.py:828:see_memory_usage] MA 0.0 GB         Max_MA 0.0 GB         CA 0.0 GB         Max_CA 0 GB 
+gadi-gpu-v100-0137: [2023-11-08 02:18:54,297] [INFO] [utils.py:836:see_memory_usage] CPU Virtual Memory:  used = 26.8 GB, percent = 7.1%
+gadi-gpu-v100-0137: [2023-11-08 02:18:54,346] [INFO] [utils.py:827:see_memory_usage] post-init-ds-zero-init
+gadi-gpu-v100-0137: [2023-11-08 02:18:54,347] [INFO] [utils.py:828:see_memory_usage] MA 0.0 GB         Max_MA 0.0 GB         CA 0.0 GB         Max_CA 0 GB 
+gadi-gpu-v100-0137: [2023-11-08 02:18:54,347] [INFO] [utils.py:836:see_memory_usage] CPU Virtual Memory:  used = 26.8 GB, percent = 7.1%
+gadi-gpu-v100-0137: [2023-11-08 02:18:54,392] [INFO] [utils.py:827:see_memory_usage] pre-ds-inference-init
+gadi-gpu-v100-0137: [2023-11-08 02:18:54,392] [INFO] [utils.py:828:see_memory_usage] MA 0.0 GB         Max_MA 0.0 GB         CA 0.0 GB         Max_CA 0 GB 
+gadi-gpu-v100-0137: [2023-11-08 02:18:54,393] [INFO] [utils.py:836:see_memory_usage] CPU Virtual Memory:  used = 26.8 GB, percent = 7.1%
+gadi-gpu-v100-0137: [2023-11-08 02:18:54,393] [INFO] [logging.py:68:log_dist] [Rank 0] DeepSpeed info: version=0.7.6, git-hash=unknown, git-branch=unknown
+gadi-gpu-v100-0137: [2023-11-08 02:18:54,393] [WARNING] [config_utils.py:67:_process_deprecated_field] Config parameter mp_size is deprecated use tensor_parallel.tp_size instead
+gadi-gpu-v100-0137: [2023-11-08 02:18:54,393] [INFO] [logging.py:68:log_dist] [Rank 0] quantize_bits = 8 mlp_extra_grouping = False, quantize_groups = 1
+gadi-gpu-v100-0140: Using /home/552/dz9214/.cache/torch_extensions/py38_cu116 as PyTorch extensions root...
+gadi-gpu-v100-0140: Using /home/552/dz9214/.cache/torch_extensions/py38_cu116 as PyTorch extensions root...
+gadi-gpu-v100-0140: Using /home/552/dz9214/.cache/torch_extensions/py38_cu116 as PyTorch extensions root...
+gadi-gpu-v100-0137: Using /home/552/dz9214/.cache/torch_extensions/py38_cu116 as PyTorch extensions root...
+gadi-gpu-v100-0137: Using /home/552/dz9214/.cache/torch_extensions/py38_cu116 as PyTorch extensions root...
+gadi-gpu-v100-0137: Using /home/552/dz9214/.cache/torch_extensions/py38_cu116 as PyTorch extensions root...
+gadi-gpu-v100-0140: Using /home/552/dz9214/.cache/torch_extensions/py38_cu116 as PyTorch extensions root...
+gadi-gpu-v100-0137: Using /home/552/dz9214/.cache/torch_extensions/py38_cu116 as PyTorch extensions root...
+gadi-gpu-v100-0140: Detected CUDA files, patching ldflags
+gadi-gpu-v100-0140: Emitting ninja build file /home/552/dz9214/.cache/torch_extensions/py38_cu116/transformer_inference/build.ninja...
+gadi-gpu-v100-0140: Building extension module transformer_inference...
+gadi-gpu-v100-0140: Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+gadi-gpu-v100-0140: ninja: no work to do.
+gadi-gpu-v100-0140: Loading extension module transformer_inference...
+gadi-gpu-v100-0140: Loading extension module transformer_inference...
+gadi-gpu-v100-0140: Loading extension module transformer_inference...
+gadi-gpu-v100-0140: Loading extension module transformer_inference...
+gadi-gpu-v100-0140: Time to load transformer_inference op: 0.12959074974060059 seconds
+gadi-gpu-v100-0140: Time to load transformer_inference op: 0.13541126251220703 seconds
+gadi-gpu-v100-0140: Time to load transformer_inference op: 0.13205814361572266 seconds
+gadi-gpu-v100-0140: Time to load transformer_inference op: 0.12775349617004395 seconds
+gadi-gpu-v100-0140: Using /home/552/dz9214/.cache/torch_extensions/py38_cu116 as PyTorch extensions root...
+gadi-gpu-v100-0140: Using /home/552/dz9214/.cache/torch_extensions/py38_cu116 as PyTorch extensions root...
+gadi-gpu-v100-0140: Using /home/552/dz9214/.cache/torch_extensions/py38_cu116 as PyTorch extensions root...
+gadi-gpu-v100-0140: Using /home/552/dz9214/.cache/torch_extensions/py38_cu116 as PyTorch extensions root...
+gadi-gpu-v100-0140: No modifications detected for re-loaded extension module transformer_inference, skipping build step...
+gadi-gpu-v100-0140: Loading extension module transformer_inference...
+gadi-gpu-v100-0140: No modifications detected for re-loaded extension module transformer_inference, skipping build step...
+gadi-gpu-v100-0140: Loading extension module transformer_inference...
+gadi-gpu-v100-0140: Time to load transformer_inference op: 0.027587890625 seconds
+gadi-gpu-v100-0140: Time to load transformer_inference op: 0.02431488037109375 seconds
+gadi-gpu-v100-0140: No modifications detected for re-loaded extension module transformer_inference, skipping build step...
+gadi-gpu-v100-0140: Loading extension module transformer_inference...
+gadi-gpu-v100-0140: No modifications detected for re-loaded extension module transformer_inference, skipping build step...
+gadi-gpu-v100-0140: Loading extension module transformer_inference...
+gadi-gpu-v100-0140: Time to load transformer_inference op: 0.026488065719604492 seconds
+gadi-gpu-v100-0140: Time to load transformer_inference op: 0.024137258529663086 seconds
+gadi-gpu-v100-0140: Using /home/552/dz9214/.cache/torch_extensions/py38_cu116 as PyTorch extensions root...
+gadi-gpu-v100-0140: Using /home/552/dz9214/.cache/torch_extensions/py38_cu116 as PyTorch extensions root...
+gadi-gpu-v100-0140: Using /home/552/dz9214/.cache/torch_extensions/py38_cu116 as PyTorch extensions root...
+gadi-gpu-v100-0140: Using /home/552/dz9214/.cache/torch_extensions/py38_cu116 as PyTorch extensions root...
+gadi-gpu-v100-0140: No modifications detected for re-loaded extension module transformer_inference, skipping build step...
+gadi-gpu-v100-0140: Loading extension module transformer_inference...
+gadi-gpu-v100-0140: No modifications detected for re-loaded extension module transformer_inference, skipping build step...
+gadi-gpu-v100-0140: Loading extension module transformer_inference...
+gadi-gpu-v100-0140: Time to load transformer_inference op: 0.024930477142333984 seconds
+gadi-gpu-v100-0140: Time to load transformer_inference op: 0.024296045303344727 seconds
+gadi-gpu-v100-0140: No modifications detected for re-loaded extension module transformer_inference, skipping build step...
+gadi-gpu-v100-0140: Loading extension module transformer_inference...
+gadi-gpu-v100-0140: Time to load transformer_inference op: 0.025435686111450195 seconds
+gadi-gpu-v100-0140: No modifications detected for re-loaded extension module transformer_inference, skipping build step...
+gadi-gpu-v100-0140: Loading extension module transformer_inference...
+gadi-gpu-v100-0140: Time to load transformer_inference op: 0.026076316833496094 seconds
+gadi-gpu-v100-0137: Loading extension module transformer_inference...
+gadi-gpu-v100-0137: Loading extension module transformer_inference...
+gadi-gpu-v100-0137: Loading extension module transformer_inference...
+gadi-gpu-v100-0137: Loading extension module transformer_inference...
+gadi-gpu-v100-0137: Time to load transformer_inference op: 3.0475127696990967 seconds
+gadi-gpu-v100-0137: Time to load transformer_inference op: 3.0434582233428955 seconds
+gadi-gpu-v100-0137: Time to load transformer_inference op: 3.042450428009033 seconds
+gadi-gpu-v100-0137: Time to load transformer_inference op: 3.0479917526245117 seconds
+gadi-gpu-v100-0137: [2023-11-08 02:18:57,752] [INFO] [logging.py:68:log_dist] [Rank 0] DeepSpeed-Inference config: {'layer_id': 0, 'hidden_size': 14336, 'intermediate_size': 57344, 'heads': 112, 'num_hidden_layers': -1, 'fp16': True, 'pre_layer_norm': True, 'local_rank': -1, 'stochastic_mode': False, 'epsilon': 1e-05, 'mp_size': 8, 'q_int8': True, 'scale_attention': True, 'triangular_masking': True, 'local_attention': False, 'window_size': 1, 'rotary_dim': -1, 'rotate_half': False, 'rotate_every_two': True, 'return_tuple': True, 'mlp_after_attn': True, 'mlp_act_func_type': <ActivationFuncType.GELU: 1>, 'specialized_mode': False, 'training_mp_size': 1, 'bigscience_bloom': True, 'max_out_tokens': 1024, 'scale_attn_by_inverse_layer_idx': False}
+gadi-gpu-v100-0137: Using /home/552/dz9214/.cache/torch_extensions/py38_cu116 as PyTorch extensions root...
+gadi-gpu-v100-0137: Using /home/552/dz9214/.cache/torch_extensions/py38_cu116 as PyTorch extensions root...
+gadi-gpu-v100-0137: No modifications detected for re-loaded extension module transformer_inference, skipping build step...
+gadi-gpu-v100-0137: Loading extension module transformer_inference...
+gadi-gpu-v100-0137: Time to load transformer_inference op: 0.0252532958984375 seconds
+gadi-gpu-v100-0137: No modifications detected for re-loaded extension module transformer_inference, skipping build step...
+gadi-gpu-v100-0137: Loading extension module transformer_inference...
+gadi-gpu-v100-0137: Time to load transformer_inference op: 0.026157855987548828 seconds
+gadi-gpu-v100-0137: Using /home/552/dz9214/.cache/torch_extensions/py38_cu116 as PyTorch extensions root...
+gadi-gpu-v100-0137: No modifications detected for re-loaded extension module transformer_inference, skipping build step...
+gadi-gpu-v100-0137: Loading extension module transformer_inference...
+gadi-gpu-v100-0137: Time to load transformer_inference op: 0.028638124465942383 seconds
+gadi-gpu-v100-0137: Using /home/552/dz9214/.cache/torch_extensions/py38_cu116 as PyTorch extensions root...
+gadi-gpu-v100-0137: Using /home/552/dz9214/.cache/torch_extensions/py38_cu116 as PyTorch extensions root...
+gadi-gpu-v100-0137: No modifications detected for re-loaded extension module transformer_inference, skipping build step...
+gadi-gpu-v100-0137: Loading extension module transformer_inference...
+gadi-gpu-v100-0137: Time to load transformer_inference op: 0.025847673416137695 seconds
+gadi-gpu-v100-0137: No modifications detected for re-loaded extension module transformer_inference, skipping build step...
+gadi-gpu-v100-0137: Loading extension module transformer_inference...
+gadi-gpu-v100-0137: Time to load transformer_inference op: 0.025349855422973633 seconds
+gadi-gpu-v100-0137: Using /home/552/dz9214/.cache/torch_extensions/py38_cu116 as PyTorch extensions root...
+gadi-gpu-v100-0137: No modifications detected for re-loaded extension module transformer_inference, skipping build step...
+gadi-gpu-v100-0137: Loading extension module transformer_inference...
+gadi-gpu-v100-0137: Time to load transformer_inference op: 0.02686786651611328 seconds
+gadi-gpu-v100-0137: Using /home/552/dz9214/.cache/torch_extensions/py38_cu116 as PyTorch extensions root...
+gadi-gpu-v100-0137: No modifications detected for re-loaded extension module transformer_inference, skipping build step...
+gadi-gpu-v100-0137: Loading extension module transformer_inference...
+gadi-gpu-v100-0137: Time to load transformer_inference op: 0.02718067169189453 seconds
+gadi-gpu-v100-0137: Using /home/552/dz9214/.cache/torch_extensions/py38_cu116 as PyTorch extensions root...
+gadi-gpu-v100-0137: No modifications detected for re-loaded extension module transformer_inference, skipping build step...
+gadi-gpu-v100-0137: Loading extension module transformer_inference...
+gadi-gpu-v100-0137: Time to load transformer_inference op: 0.025863170623779297 seconds
+gadi-gpu-v100-0140: Loading 8 checkpoint shards:   0%|          | 0/8 [00:00<?, ?it/s]Loading 8 checkpoint shards:   0%|          | 0/8 [00:00<?, ?it/s]Loading 8 checkpoint shards:   0%|          | 0/8 [00:00<?, ?it/s]Loading 8 checkpoint shards:   0%|          | 0/8 [00:00<?, ?it/s]Loading 8 checkpoint shards:  25%|██▌       | 2/8 [00:05<00:16,  2.76s/it]Loading 8 checkpoint shards:  25%|██▌       | 2/8 [00:05<00:16,  2.76s/it]Loading 8 checkpoint shards:  25%|██▌       | 2/8 [00:05<00:16,  2.76s/it]Loading 8 checkpoint shards:  25%|██▌       | 2/8 [00:05<00:16,  2.78s/it]Loading 8 checkpoint shards:  38%|███▊      | 3/8 [00:09<00:16,  3.38s/it]Loading 8 checkpoint shards:  38%|███▊      | 3/8 [00:09<00:16,  3.40s/it]Loading 8 checkpoint shards:  38%|███▊      | 3/8 [00:09<00:17,  3.41s/it]Loading 8 checkpoint shards:  38%|███▊      | 3/8 [00:09<00:17,  3.43s/it]Loading 8 checkpoint shards:  50%|█████     | 4/8 [00:13<00:14,  3.68s/it]Loading 8 checkpoint shards:  50%|█████     | 4/8 [00:14<00:14,  3.73s/it]Loading 8 checkpoint shards:  50%|█████     | 4/8 [00:14<00:15,  3.82s/it]Loading 8 checkpoint shards:  50%|█████     | 4/8 [00:14<00:15,  3.86s/it]Loading 8 checkpoint shards:  62%|██████▎   | 5/8 [00:18<00:11,  3.82s/it]Loading 8 checkpoint shards:  62%|██████▎   | 5/8 [00:18<00:12,  4.05s/it]Loading 8 checkpoint shards:  62%|██████▎   | 5/8 [00:18<00:12,  4.04s/it]Loading 8 checkpoint shards:  62%|██████▎   | 5/8 [00:18<00:12,  4.08s/it]Loading 8 checkpoint shards:  75%|███████▌  | 6/8 [00:22<00:07,  3.90s/it]Loading 8 checkpoint shards:  75%|███████▌  | 6/8 [00:22<00:08,  4.11s/it]Loading 8 checkpoint shards:  75%|███████▌  | 6/8 [00:23<00:08,  4.09s/it]Loading 8 checkpoint shards:  75%|███████▌  | 6/8 [00:23<00:08,  4.18s/it]Loading 8 checkpoint shards:  88%|████████▊ | 7/8 [00:26<00:03,  3.99s/it]Loading 8 checkpoint shards:  88%|████████▊ | 7/8 [00:27<00:04,  4.19s/it]Loading 8 checkpoint shards:  88%|████████▊ | 7/8 [00:27<00:04,  4.24s/it]Loading 8 checkpoint shards:  88%|████████▊ | 7/8 [00:27<00:04,  4.22s/it]Loading 8 checkpoint shards: 100%|██████████| 8/8 [00:30<00:00,  4.05s/it]Loading 8 checkpoint shards: 100%|██████████| 8/8 [00:31<00:00,  4.30s/it]Loading 8 checkpoint shards: 100%|██████████| 8/8 [00:32<00:00,  4.33s/it]Loading 8 checkpoint shards: 100%|██████████| 8/8 [00:32<00:00,  4.43s/it]
+gadi-gpu-v100-0140: Loading 1 checkpoint shards:   0%|          | 0/1 [00:00<?, ?it/s][ALoading 8 checkpoint shards: 100%|██████████| 8/8 [00:34<00:00,  4.26s/it]
+gadi-gpu-v100-0137: Loading 8 checkpoint shards:   0%|          | 0/8 [00:00<?, ?it/s]Loading 8 checkpoint shards:   0%|          | 0/8 [00:00<?, ?it/s]Loading 8 checkpoint shards:   0%|          | 0/8 [00:00<?, ?it/s]Loading 8 checkpoint shards:   0%|          | 0/8 [00:00<?, ?it/s]Loading 8 checkpoint shards:  25%|██▌       | 2/8 [00:05<00:16,  2.70s/it]Loading 8 checkpoint shards:  25%|██▌       | 2/8 [00:05<00:16,  2.70s/it]Loading 8 checkpoint shards:  25%|██▌       | 2/8 [00:05<00:17,  2.86s/it]Loading 8 checkpoint shards:  25%|██▌       | 2/8 [00:05<00:17,  2.91s/it]Loading 8 checkpoint shards:  38%|███▊      | 3/8 [00:09<00:15,  3.20s/it]Loading 8 checkpoint shards:  38%|███▊      | 3/8 [00:09<00:17,  3.41s/it]Loading 8 checkpoint shards:  38%|███▊      | 3/8 [00:10<00:17,  3.45s/it]Loading 8 checkpoint shards:  38%|███▊      | 3/8 [00:10<00:18,  3.65s/it]Loading 8 checkpoint shards:  50%|█████     | 4/8 [00:13<00:13,  3.42s/it]Loading 8 checkpoint shards:  50%|█████     | 4/8 [00:14<00:15,  3.76s/it]Loading 8 checkpoint shards:  50%|█████     | 4/8 [00:14<00:15,  3.79s/it]Loading 8 checkpoint shards:  50%|█████     | 4/8 [00:15<00:15,  3.99s/it]Loading 8 checkpoint shards:  62%|██████▎   | 5/8 [00:17<00:10,  3.60s/it]Loading 8 checkpoint shards:  62%|██████▎   | 5/8 [00:18<00:11,  3.93s/it]Loading 8 checkpoint shards:  62%|██████▎   | 5/8 [00:18<00:11,  3.96s/it]Loading 8 checkpoint shards:  62%|██████▎   | 5/8 [00:19<00:12,  4.15s/it]Loading 8 checkpoint shards:  75%|███████▌  | 6/8 [00:21<00:07,  3.79s/it]Loading 8 checkpoint shards:  75%|███████▌  | 6/8 [00:22<00:08,  4.07s/it]Loading 8 checkpoint shards:  75%|███████▌  | 6/8 [00:23<00:08,  4.17s/it]Loading 8 checkpoint shards:  75%|███████▌  | 6/8 [00:24<00:08,  4.27s/it]Loading 8 checkpoint shards:  88%|████████▊ | 7/8 [00:25<00:03,  3.81s/it]Loading 8 checkpoint shards:  88%|████████▊ | 7/8 [00:27<00:04,  4.15s/it]Loading 8 checkpoint shards:  88%|████████▊ | 7/8 [00:27<00:04,  4.17s/it]Loading 8 checkpoint shards:  88%|████████▊ | 7/8 [00:28<00:04,  4.32s/it]Loading 8 checkpoint shards: 100%|██████████| 8/8 [00:29<00:00,  3.88s/it]Loading 8 checkpoint shards: 100%|██████████| 8/8 [00:31<00:00,  4.24s/it]Loading 8 checkpoint shards: 100%|██████████| 8/8 [00:31<00:00,  4.25s/it]
+gadi-gpu-v100-0137: Loading 1 checkpoint shards:   0%|          | 0/1 [00:00<?, ?it/s][ALoading 8 checkpoint shards: 100%|██████████| 8/8 [00:32<00:00,  4.08s/it]
+gadi-gpu-v100-0140: 
+gadi-gpu-v100-0140: Loading 1 checkpoint shards:   0%|          | 0/1 [00:00<?, ?it/s][ALoading 8 checkpoint shards: 100%|██████████| 8/8 [00:35<00:00,  4.45s/it]
+gadi-gpu-v100-0140: 
+gadi-gpu-v100-0140: Loading 1 checkpoint shards:   0%|          | 0/1 [00:00<?, ?it/s][ALoading 8 checkpoint shards: 100%|██████████| 8/8 [00:35<00:00,  4.47s/it]
+gadi-gpu-v100-0140: 
+gadi-gpu-v100-0140: Loading 1 checkpoint shards:   0%|          | 0/1 [00:00<?, ?it/s][ALoading 8 checkpoint shards: 100%|██████████| 8/8 [00:36<00:00,  4.55s/it]
+gadi-gpu-v100-0137: Loading 8 checkpoint shards: 100%|██████████| 8/8 [00:33<00:00,  4.40s/it]
+gadi-gpu-v100-0137: Loading 1 checkpoint shards:   0%|          | 0/1 [00:00<?, ?it/s][ALoading 8 checkpoint shards: 100%|██████████| 8/8 [00:35<00:00,  4.40s/it]
+gadi-gpu-v100-0137: 
+gadi-gpu-v100-0137: Loading 1 checkpoint shards:   0%|          | 0/1 [00:00<?, ?it/s][ALoading 8 checkpoint shards: 100%|██████████| 8/8 [00:35<00:00,  4.44s/it]
+gadi-gpu-v100-0140: checkpoint loading time at rank 5: 39.756526470184326 sec
+gadi-gpu-v100-0140: Loading 1 checkpoint shards: 100%|██████████| 1/1 [00:05<00:00,  5.70s/it]
+gadi-gpu-v100-0137: 
+gadi-gpu-v100-0137: Loading 1 checkpoint shards:   0%|          | 0/1 [00:00<?, ?it/s][ALoading 8 checkpoint shards: 100%|██████████| 8/8 [00:36<00:00,  4.61s/it]
+gadi-gpu-v100-0137: checkpoint loading time at rank 3: 37.35740327835083 sec
+gadi-gpu-v100-0137: Loading 1 checkpoint shards: 100%|██████████| 1/1 [00:04<00:00,  4.72s/it]
+gadi-gpu-v100-0140: checkpoint loading time at rank 6: 41.149359703063965 sec
+gadi-gpu-v100-0140: Loading 1 checkpoint shards: 100%|██████████| 1/1 [00:05<00:00,  5.56s/it]
+gadi-gpu-v100-0140: checkpoint loading time at rank 4: 41.360023736953735 sec
+gadi-gpu-v100-0140: Loading 1 checkpoint shards: 100%|██████████| 1/1 [00:05<00:00,  5.56s/it]
+gadi-gpu-v100-0140: checkpoint loading time at rank 7: 42.111953020095825 sec
+gadi-gpu-v100-0140: Loading 1 checkpoint shards: 100%|██████████| 1/1 [00:05<00:00,  5.73s/it]
+gadi-gpu-v100-0137: checkpoint loading time at rank 1: 40.960302114486694 sec
+gadi-gpu-v100-0137: Loading 1 checkpoint shards: 100%|██████████| 1/1 [00:05<00:00,  5.76s/it]
+gadi-gpu-v100-0137: checkpoint loading time at rank 2: 41.61100125312805 sec
+gadi-gpu-v100-0137: Loading 1 checkpoint shards: 100%|██████████| 1/1 [00:06<00:00,  6.09s/it]
+gadi-gpu-v100-0137: checkpoint loading time at rank 0: 42.46452307701111 sec
+gadi-gpu-v100-0137: Loading 1 checkpoint shards: 100%|██████████| 1/1 [00:05<00:00,  5.61s/it]
+gadi-gpu-v100-0137: [2023-11-08 02:19:41,252] [INFO] [utils.py:827:see_memory_usage] post-ds-inference-init
+gadi-gpu-v100-0137: [2023-11-08 02:19:41,253] [INFO] [utils.py:828:see_memory_usage] MA 26.84 GB         Max_MA 26.84 GB         CA 26.95 GB         Max_CA 27 GB 
+gadi-gpu-v100-0137: [2023-11-08 02:19:41,253] [INFO] [utils.py:836:see_memory_usage] CPU Virtual Memory:  used = 37.89 GB, percent = 10.1%
+gadi-gpu-v100-0137: *** Starting to generate 100 tokens with bs=13
+gadi-gpu-v100-0137: Generate args {'max_new_tokens': 100, 'do_sample': False}
+gadi-gpu-v100-0137: *** Running generate warmup
+gadi-gpu-v100-0137: ------------------------------------------------------
+gadi-gpu-v100-0137: Free memory : 3.782837 (GigaBytes)  
+gadi-gpu-v100-0137: Total memory: 31.739380 (GigaBytes)  
+gadi-gpu-v100-0137: Requested memory: 2.121704 (GigaBytes) 
+gadi-gpu-v100-0137: Setting maximum total tokens (input + output) to 191 
+gadi-gpu-v100-0137: ------------------------------------------------------
+gadi-gpu-v100-0137: *** Running generate
+gadi-gpu-v100-0137: ------------------------------------------------------------
+gadi-gpu-v100-0137: in=DeepSpeed is a machine learning framework
+gadi-gpu-v100-0137: out=DeepSpeed is a machine learning framework for fast and accurate prediction of protein structure and function. It is based on a novel deep learning architecture, which is able to learn from a large amount of data, and to make accurate predictions. The framework is able to learn from a large amount of data, and to make accurate predictions. The framework is able to learn from a large amount of data, and to make accurate predictions. The framework is able to learn from a large amount of data, and to make accurate predictions. The framework is able
+gadi-gpu-v100-0137: 
+gadi-gpu-v100-0137: ------------------------------------------------------------
+gadi-gpu-v100-0137: in=He is working on
+gadi-gpu-v100-0137: out=He is working on a new book, and he is also working on a new book on the history of the American Revolution. He is also working on a new book on the history of the American Revolution. He is also working on a new book on the history of the American Revolution. He is also working on a new book on the history of the American Revolution. He is also working on a new book on the history of the American Revolution. He is also working on a new book on the history of the American Revolution
+gadi-gpu-v100-0137: 
+gadi-gpu-v100-0137: ------------------------------------------------------------
+gadi-gpu-v100-0137: in=He has a
+gadi-gpu-v100-0137: out=He has a lot of money.
+gadi-gpu-v100-0137: He has a lot of money.
+gadi-gpu-v100-0137: He has a lot of money.
+gadi-gpu-v100-0137: He has a lot of money.
+gadi-gpu-v100-0137: He has a lot of money.
+gadi-gpu-v100-0137: He has a lot of money.
+gadi-gpu-v100-0137: He has a lot of money.
+gadi-gpu-v100-0137: He has a lot of money.
+gadi-gpu-v100-0137: He has a lot of money.
+gadi-gpu-v100-0137: He has a lot of money.
+gadi-gpu-v100-0137: He has a lot of money.
+gadi-gpu-v100-0137: He has a lot of money.
+gadi-gpu-v100-0137: He has a lot of money.
+gadi-gpu-v100-0137: He has a lot of money.
+gadi-gpu-v100-0137: He has a lot of
+gadi-gpu-v100-0137: 
+gadi-gpu-v100-0137: ------------------------------------------------------------
+gadi-gpu-v100-0137: in=He got all
+gadi-gpu-v100-0137: out=He got all the way to the top of the mountain.
+gadi-gpu-v100-0137: He was just about to get the treasure when he was attacked by a giant.
+gadi-gpu-v100-0137: He was killed.
+gadi-gpu-v100-0137: The treasure was lost.
+gadi-gpu-v100-0137: The end.
+gadi-gpu-v100-0137: I don't know.
+gadi-gpu-v100-0137: I don't know.
+gadi-gpu-v100-0137: I don't know.
+gadi-gpu-v100-0137: I don't know.
+gadi-gpu-v100-0137: I don't know.
+gadi-gpu-v100-0137: I don't know.
+gadi-gpu-v100-0137: I don't know.
+gadi-gpu-v100-0137: I don't know.
+gadi-gpu-v100-0137: I don't know.
+gadi-gpu-v100-0137: I don't know.
+gadi-gpu-v100-0137: I don't know.
+gadi-gpu-v100-0137: I don't know.
+gadi-gpu-v100-0137: I don't know.
+gadi-gpu-v100-0137: I don't know.
+gadi-gpu-v100-0137: I don't know.
+gadi-gpu-v100-0137: I don't know
+gadi-gpu-v100-0137: 
+gadi-gpu-v100-0137: ------------------------------------------------------------
+gadi-gpu-v100-0137: in=Everyone is happy and I can
+gadi-gpu-v100-0137: out=Everyone is happy and I can see that the people are happy. I can see that the people are happy. I can see that the people are happy. I can see that the people are happy. I can see that the people are happy. I can see that the people are happy. I can see that the people are happy. I can see that the people are happy. I can see that the people are happy. I can see that the people are happy. I can see that the people are happy. I can see
+gadi-gpu-v100-0137: 
+gadi-gpu-v100-0137: ------------------------------------------------------------
+gadi-gpu-v100-0137: in=The new movie that got Oscar this year
+gadi-gpu-v100-0137: out=The new movie that got Oscar this year is a movie about a man who is a man who is a man who is a man who is a man who is a man who is a man who is a man who is a man who is a man who is a man who is a man who is a man who is a man who is a man who is a man who is a man who is a man who is a man who is a man who is a man who is a man who is a man who is a man who is
+gadi-gpu-v100-0137: 
+gadi-gpu-v100-0137: ------------------------------------------------------------
+gadi-gpu-v100-0137: in=In the far far distance from our galaxy,
+gadi-gpu-v100-0137: out=In the far far distance from our galaxy, there is a planet called the planet of the dead.
+gadi-gpu-v100-0137: The planet of the dead is a planet of the dead.
+gadi-gpu-v100-0137: The planet of the dead is a planet of the dead.
+gadi-gpu-v100-0137: The planet of the dead is a planet of the dead.
+gadi-gpu-v100-0137: The planet of the dead is a planet of the dead.
+gadi-gpu-v100-0137: The planet of the dead is a planet of the dead.
+gadi-gpu-v100-0137: The planet of the dead is a planet of the dead.
+gadi-gpu-v100-0137: The planet of the dead is a planet of the dead.
+gadi-gpu-v100-0137: The planet of the dead
+gadi-gpu-v100-0137: 
+gadi-gpu-v100-0137: ------------------------------------------------------------
+gadi-gpu-v100-0137: in=Peace is the only way
+gadi-gpu-v100-0137: out=Peace is the only way to solve the problem of the world. The world is in a state of war. The world is in a state of war. The world is in a state of war. The world is in a state of war. The world is in a state of war. The world is in a state of war. The world is in a state of war. The world is in a state of war. The world is in a state of war. The world is in a state of war. The world
+gadi-gpu-v100-0137: 
+gadi-gpu-v100-0137: ------------------------------------------------------------
+gadi-gpu-v100-0137: in=DeepSpeed is a machine learning framework
+gadi-gpu-v100-0137: out=DeepSpeed is a machine learning framework for fast and accurate prediction of protein structure and function. It is based on a novel deep learning architecture, which is able to learn from a large amount of data, and to make accurate predictions. The framework is able to learn from a large amount of data, and to make accurate predictions. The framework is able to learn from a large amount of data, and to make accurate predictions. The framework is able to learn from a large amount of data, and to make accurate predictions. The framework is able
+gadi-gpu-v100-0137: 
+gadi-gpu-v100-0137: ------------------------------------------------------------
+gadi-gpu-v100-0137: in=He is working on
+gadi-gpu-v100-0137: out=He is working on a new book, and he is also working on a new book on the history of the American Revolution. He is also working on a new book on the history of the American Revolution. He is also working on a new book on the history of the American Revolution. He is also working on a new book on the history of the American Revolution. He is also working on a new book on the history of the American Revolution. He is also working on a new book on the history of the American Revolution
+gadi-gpu-v100-0137: 
+gadi-gpu-v100-0137: ------------------------------------------------------------
+gadi-gpu-v100-0137: in=He has a
+gadi-gpu-v100-0137: out=He has a lot of money.
+gadi-gpu-v100-0137: He has a lot of money.
+gadi-gpu-v100-0137: He has a lot of money.
+gadi-gpu-v100-0137: He has a lot of money.
+gadi-gpu-v100-0137: He has a lot of money.
+gadi-gpu-v100-0137: He has a lot of money.
+gadi-gpu-v100-0137: He has a lot of money.
+gadi-gpu-v100-0137: He has a lot of money.
+gadi-gpu-v100-0137: He has a lot of money.
+gadi-gpu-v100-0137: He has a lot of money.
+gadi-gpu-v100-0137: He has a lot of money.
+gadi-gpu-v100-0137: He has a lot of money.
+gadi-gpu-v100-0137: He has a lot of money.
+gadi-gpu-v100-0137: He has a lot of money.
+gadi-gpu-v100-0137: He has a lot of
+gadi-gpu-v100-0137: 
+gadi-gpu-v100-0137: ------------------------------------------------------------
+gadi-gpu-v100-0137: in=He got all
+gadi-gpu-v100-0137: out=He got all the way to the top of the mountain.
+gadi-gpu-v100-0137: He was just about to get the treasure when he was attacked by a giant.
+gadi-gpu-v100-0137: He was killed.
+gadi-gpu-v100-0137: The treasure was lost.
+gadi-gpu-v100-0137: The end.
+gadi-gpu-v100-0137: I don't know.
+gadi-gpu-v100-0137: I don't know.
+gadi-gpu-v100-0137: I don't know.
+gadi-gpu-v100-0137: I don't know.
+gadi-gpu-v100-0137: I don't know.
+gadi-gpu-v100-0137: I don't know.
+gadi-gpu-v100-0137: I don't know.
+gadi-gpu-v100-0137: I don't know.
+gadi-gpu-v100-0137: I don't know.
+gadi-gpu-v100-0137: I don't know.
+gadi-gpu-v100-0137: I don't know.
+gadi-gpu-v100-0137: I don't know.
+gadi-gpu-v100-0137: I don't know.
+gadi-gpu-v100-0137: I don't know.
+gadi-gpu-v100-0137: I don't know.
+gadi-gpu-v100-0137: I don't know
+gadi-gpu-v100-0137: 
+gadi-gpu-v100-0137: ------------------------------------------------------------
+gadi-gpu-v100-0137: in=Everyone is happy and I can
+gadi-gpu-v100-0137: out=Everyone is happy and I can see that the people are happy. I can see that the people are happy. I can see that the people are happy. I can see that the people are happy. I can see that the people are happy. I can see that the people are happy. I can see that the people are happy. I can see that the people are happy. I can see that the people are happy. I can see that the people are happy. I can see that the people are happy. I can see
+gadi-gpu-v100-0137: 
+gadi-gpu-v100-0137: [2023-11-08 02:20:26,660] [INFO] [utils.py:827:see_memory_usage] end-of-run
+gadi-gpu-v100-0137: [2023-11-08 02:20:26,661] [INFO] [utils.py:828:see_memory_usage] MA 26.84 GB         Max_MA 28.22 GB         CA 26.95 GB         Max_CA 29 GB 
+gadi-gpu-v100-0137: [2023-11-08 02:20:26,661] [INFO] [utils.py:836:see_memory_usage] CPU Virtual Memory:  used = 37.99 GB, percent = 10.1%
+gadi-gpu-v100-0137: *** Running benchmark
+gadi-gpu-v100-0137: 
+gadi-gpu-v100-0137: *** Performance stats:
+gadi-gpu-v100-0137: Throughput per token including tokenize: 17.12 msecs
+gadi-gpu-v100-0137: Start to ready to generate: 48.803 secs
+gadi-gpu-v100-0137: Tokenize and generate 6500 (bs=13) tokens: 22.266 secs
+gadi-gpu-v100-0137: Start to finish: 71.069 secs
+gadi-gpu-v100-0137: 
+gadi-gpu-v100-0137: [2023-11-08 02:22:41,564] [INFO] [launch.py:350:main] Process 603062 exits successfully.
+gadi-gpu-v100-0137: [2023-11-08 02:22:41,565] [INFO] [launch.py:350:main] Process 603063 exits successfully.
+gadi-gpu-v100-0137: [2023-11-08 02:22:41,565] [INFO] [launch.py:350:main] Process 603064 exits successfully.
+gadi-gpu-v100-0137: [2023-11-08 02:22:41,565] [INFO] [launch.py:350:main] Process 603061 exits successfully.
+gadi-gpu-v100-0140: [2023-11-08 02:22:41,708] [INFO] [launch.py:350:main] Process 250819 exits successfully.
+gadi-gpu-v100-0140: [2023-11-08 02:22:41,708] [INFO] [launch.py:350:main] Process 250817 exits successfully.
+gadi-gpu-v100-0140: [2023-11-08 02:22:41,708] [INFO] [launch.py:350:main] Process 250816 exits successfully.
+gadi-gpu-v100-0140: [2023-11-08 02:22:41,708] [INFO] [launch.py:350:main] Process 250818 exits successfully.
