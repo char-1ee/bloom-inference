@@ -1,6 +1,6 @@
 # BLOOM
 
-This folder contains scripts and outputs for AI Task by Team Nebula from NTU.
+This folder contains scripts and outputs for BLOOM batch inference on cluster environment (2 nodes, each with 4 V100 GPUs).
 
 ## File Structure
 
