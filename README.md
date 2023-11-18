@@ -1,6 +1,6 @@
 # BLOOM
 
-This folder contains scripts and outputs for BLOOM batch inference on cluster environment (2 nodes, each with 4 V100 GPUs).
+This folder contains scripts and outputs for BLOOM batch inference on cluster environment (2 nodes, each with 4 V100 GPUs). The goal is to increase BLOOM offline inference throughput under GPU memory restriction.
 
 ## File Structure
 
